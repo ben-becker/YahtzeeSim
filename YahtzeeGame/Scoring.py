@@ -56,7 +56,7 @@ class Scoring:
         elif len(set_dice) == 3:
             scores[12] = 0
             scores[7] = 0
-            for num in range(0,3)
+            for num in range(0,3):
                 if dice[num] == dice[num + 1] == dice[num +2]:
                     scores[6] = sum(dice for dice in dice)
                 else:
