@@ -15,11 +15,9 @@ class Scoring:
                   'fullhouse':0, 'smstraight':0, 'lgstraight':0, 'yahtzee':0, 'chance':0}
 
         #ones
-        count = 0
         for count in (0,6)
             if dice_list[count] == 1:
                 scores['ones'] = scores['ones'] + 1
-            count = count + 1
         #twos
         count = 0
         for count in (0,6)
