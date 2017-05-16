@@ -1,7 +1,7 @@
 # Reserved by Ben
 
 from random import randint
-
+from YahtzeeGame import Scoring
 
 class Yahtzee:
     """Provides methods to run a yahtzee game"""
@@ -33,9 +33,10 @@ class Yahtzee:
     def run_game(self, player):
         while not game_over:
             # end dice = run hand
-            dice_list = run_hand(player)
+            dice_list = self.run_hand(player)
 
             # save score from dice
+            score_list = Scoring.score_options(dice_list)
 
             # if all the scores
             if all(score_filled_list for score_filled_list in score_filled_list):
