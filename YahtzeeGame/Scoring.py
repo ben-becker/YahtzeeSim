@@ -9,9 +9,9 @@ class Scoring:
         scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
         # sorts dice into ascending order
-        dice = sorted[dice_list]
+        dice = sorted(dice_list)
         # deletes duplicate dice
-        set_dice = set[dice]
+        set_dice = set(dice)
 
         # writes scoring for ones-sixes
         for number in range(1, 7):
@@ -22,7 +22,7 @@ class Scoring:
         # writes scoring for full house
             # check if dice actually form full house (two-three matching)
             if len(set_dice) == 2:
-                if dice[0] == dice [1] and dice[4] == dice[3]:
+                if dice[0] == dice[1] and dice[4] == dice[3]:
                     scores[8] = 25
                 else:
                     scores[8] = 0
@@ -56,8 +56,8 @@ class Scoring:
         elif len(set_dice) == 3:
             scores[12] = 0
             scores[7] = 0
-            for num in range(0,3):
-                if dice[num] == dice[num + 1] == dice[num +2]:
+            for num in range(0, 3):
+                if dice[num] == dice[num + 1] == dice[num + 2]:
                     scores[6] = sum(dice for dice in dice)
                 else:
                     continue
