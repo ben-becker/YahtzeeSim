@@ -19,4 +19,4 @@ class Scoring:
                 scores[count] = scores[count] + 1
 
         #writes chance
-        scores[] = dice_list[0] + dice_list[1] + dice_list[2] + dice_list[3] + dice-list[4]
+        scores[12] = dice_list[0] + dice_list[1] + dice_list[2] + dice_list[3] + dice-list[4]
