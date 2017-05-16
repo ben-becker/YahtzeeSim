@@ -5,7 +5,7 @@
 class Scoring:
     """Provides methods to return possible scoring options"""
 
-    def score_options(dice_list):
+    def score_options(self, dice_list):
         scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
         # sorts dice into ascending order
