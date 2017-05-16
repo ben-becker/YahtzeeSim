@@ -38,7 +38,7 @@ class Yahtzee:
             # save score from dice
             score_list = Scoring.score_options(dice_list)
 
-            # if all the scores
+            # if all the scores are filled, game is over
             if all(score_filled_list for score_filled_list in score_filled_list):
                 game_over = True
 
