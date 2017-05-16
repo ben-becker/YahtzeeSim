@@ -26,5 +26,6 @@ class Scoring:
             if dice_list[count] == 2:
                 scores['twoes'] = scores['twoes'] + 2
             count = count + 1
+        #threes
 
         scores[count-1] = dice_list[0] + dice_list[1] + dice_list[2] + dice_list[3] + dice-list[4]
