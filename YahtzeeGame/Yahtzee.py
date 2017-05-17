@@ -25,17 +25,16 @@ class Yahtzee:
                 if not keep_array[dice_index]:
                     dice_list[dice_index] = randint(1, 2, 3, 4, 5, 6)
 
-        print(dice_list)
-
         return dice_list
 
     def pick_score(self, potential_list):
-        potential_sorted_descending = reversed(sorted(potential_list))
+        potential_sorted_descending = list(reversed(sorted(potential_list)))
+        original_indices = [b[0] for b in reversed(sorted(enumerate(potential_list), key=lambda j:j[1]))]
 
-        for i in potential_sorted_descending:
-            index = potential_list.index(i)
+        for i in range(len(potential_sorted_descending)):
+            index = original_indices[i]
             if self.score_filled_list[index] == 0:
-                self.score_value_list[index] = potential_list[index]
+                self.score_value_list[index] = potential_sorted_descending[i]
                 self.score_filled_list[index] = 1
                 break
 
