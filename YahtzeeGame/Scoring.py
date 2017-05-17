@@ -15,7 +15,7 @@ class Scoring:
             for dice_index in range(0, 5):
                 # adds to respective score if the number matches the category
                 if dice_sorted[dice_index] == number:
-                    self.scores[number-1] += number
+                    self.scores[number - 1] += number
 
     def score_full_house(self, dice_sorted, dice_no_repeat):
         # checks to make sure exactly two different numbers appear in all the five dice
@@ -53,16 +53,13 @@ class Scoring:
         # check for three of a kind
         # first check that three dice numbers show up (if full house, already stored)
         elif len(dice_no_repeat) == 3:
-            # if there are three different dice numbers, four and five of a kind are zero
-            self.scores[12] = self.scores[7] = 0
             # loop to check that in sorted list there are three numbers equal somewhere
             # not the form AABBC or ABBCC or AABCC
             for num in range(0, 3):
                 if dice_sorted[num] == dice_sorted[num + 1] == dice_sorted[num + 2]:
                     # add up the score of all the dice
                     self.scores[6] = sum(dice_sorted)
-        else:
-            self.scores[12] = self.scores[7] = self.scores[6] = 0
+                    break
 
     def score_chance(self, dice):
         self.scores[12] = sum(dice)
