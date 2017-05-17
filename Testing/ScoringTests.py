@@ -125,7 +125,18 @@ class ScoringTests(unittest.TestCase):
         score.reset()
 
     def test_score_chance(self):
-        pass
+        score = Scoring()
+
+        score.score_chance([1, 2, 3, 4, 5])
+        self.assertEquals(score.scores[12], 15)
+        score.reset()
+
+        score.score_chance([3, 3, 3, 3, 3])
+        self.assertEquals(score.scores[12], 15)
+        score.reset()
+
+        score.score_chance([4, 4, 4, 4, 5])
+        self.assertEquals(score.scores[12], 21)
 
 if __name__ == '__main__':
     unittest.main()
