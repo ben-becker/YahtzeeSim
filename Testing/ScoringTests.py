@@ -46,14 +46,40 @@ class ScoringTests(unittest.TestCase):
     def test_score_straights(self):
         score = Scoring()
 
-        score.score_straights([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
-        self.assertEqual(score.scores[9:10], [30, 40])
+        score.score_straights([1, 2, 3, 4, 5])
+        self.assertEqual(score.scores[9:11], [30, 40])
+        score.reset()
 
-        score.score_straights([], [])
-        self.assertEqual(score.scores[9:10], [])
+        score.score_straights([2, 3, 4, 5, 6])
+        self.assertEqual(score.scores[9:11], [30, 40])
+        score.reset()
 
-        score.score_straights([], [])
-        self.assertEqual(score.scores[9:10], [])
+        score.score_straights([1, 2, 3, 4])
+        self.assertEqual(score.scores[9:11], [30, 0])
+        score.reset()
+
+        score.score_straights([2, 3, 4, 5])
+        self.assertEqual(score.scores[9:11], [30, 0])
+        score.reset()
+
+        score.score_straights([3, 4, 5, 6])
+        self.assertEqual(score.scores[9:11], [30, 0])
+        score.reset()
+
+        score.score_straights([1, 2, 3])
+        self.assertEqual(score.scores[9:11], [0, 0])
+        score.reset()
+
+        score.score_straights([1, 4, 6])
+        self.assertEqual(score.scores[9:11], [0, 0])
+        score.reset()
+
+        score.score_straights([1, 2, 3, 4, 6])
+        self.assertEqual(score.scores[9:11], [30, 0])
+        score.reset()
+
+        score.score_straights([1, 3, 4, 5, 6])
+        self.assertEqual(score.scores[9:11], [30, 0])
 
     def test_score_multiple_same_kind(self):
         pass
