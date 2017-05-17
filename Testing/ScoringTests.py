@@ -1,6 +1,7 @@
 import unittest
 from YahtzeeGame.Scoring import Scoring
 
+
 class ScoringTests(unittest.TestCase):
 
     def test_score_ones_through_sixes(self):

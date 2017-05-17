@@ -4,9 +4,10 @@
 class Scoring:
     """Provides methods to return possible scoring options"""
 
-    # order: ones, twos, threes, fours, fives, sixes, three kind, four kin
-    # full house, small straight, large straight, yahtzee, chance
-    scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    def __init__(self):
+        # order: ones, twos, threes, fours, fives, sixes, three kind, four kin
+        # full house, small straight, large straight, yahtzee, chance
+        self.scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     def score_one_through_sixes(self, dice_sorted):
         # goes from 1's to 6's
