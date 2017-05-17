@@ -28,12 +28,32 @@ class ScoringTests(unittest.TestCase):
     def test_score_full_house(self):
         score = Scoring()
 
-        score.score_full_house([], [])
-        self.assertEqual(score.scores[8] == 25)
+        score.score_full_house([1, 1, 1, 2, 2], [1, 2])
+        self.assertEqual(score.scores[8], 25)
         score.reset()
 
+        score.score_full_house([2, 2, 3, 3, 3], [2, 3])
+        self.assertEqual(score.scores[8], 25)
+        score.reset()
+
+        score.score_full_house([4, 4, 4, 4, 5], [4, 5])
+        self.assertEqual(score.scores[8], 0)
+        score.reset()
+
+        score.score_full_house([3, 4, 4, 4, 4], [3, 4])
+        self.assertEqual(score.scores[8], 0)
+
     def test_score_straights(self):
-        pass
+        score = Scoring()
+
+        score.score_straights([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
+        self.assertEqual(score.scores[9:10], [30, 40])
+
+        score.score_straights([], [])
+        self.assertEqual(score.scores[9:10], [])
+
+        score.score_straights([], [])
+        self.assertEqual(score.scores[9:10], [])
 
     def test_score_multiple_same_kind(self):
         pass

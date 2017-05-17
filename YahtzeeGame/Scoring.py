@@ -31,12 +31,13 @@ class Scoring:
 
     def score_straights(self, dice_no_repeat):
         # checks for large straight in ascending order no repeat list
-        if dice_no_repeat == [1, 2, 3, 4, 5]:
+        if dice_no_repeat == [1, 2, 3, 4, 5] or dice_no_repeat == [2, 3, 4, 5, 6]:
             self.scores[10] = 40
             self.scores[9] = 30
 
         # checks for small straight in ascending order no repeat list
-        if dice_no_repeat == [1, 2, 3, 4] or dice_no_repeat == [2, 3, 4, 5]:
+        elif dice_no_repeat == [1, 2, 3, 4] or dice_no_repeat == [2, 3, 4, 5] or dice_no_repeat == [3, 4, 5, 6] or \
+                dice_no_repeat == [1, 2, 3, 4, 6] or dice_no_repeat == [1, 3, 4, 5, 6]:
             self.scores[9] = 30
 
     def score_multiple_same_kind(self, dice_sorted, dice_no_repeat):
