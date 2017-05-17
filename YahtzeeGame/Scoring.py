@@ -9,6 +9,9 @@ class Scoring:
         # full house, small straight, large straight, yahtzee, chance
         self.scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+    def reset(self):
+        self.__init__()
+
     def score_one_through_sixes(self, dice_sorted):
         # goes from 1's to 6's
         for number in range(1, 7):
