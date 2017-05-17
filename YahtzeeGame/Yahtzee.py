@@ -8,6 +8,11 @@ class Yahtzee:
     score_value_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     score_filled_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+    def __init__(self):
+        self.score = 0
+        self.score_value_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.score_filled_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
     def run_hand(self, player):
         dice_list = [0, 0, 0, 0, 0]
 
