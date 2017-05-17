@@ -12,7 +12,7 @@ class Scoring:
     def score_one_through_sixes(self, dice):
         # goes from 1's to 6's
         for number in range(1, 7):
-            # goes through all the dice and counts the number
+            # goes through all the dice and counts the number corresponding to the category i.e.(ones, twos, etc.)
             for dice_index in range(0, 5):
                 if dice[dice_index] == number:
                     self.scores[number-1] += number
