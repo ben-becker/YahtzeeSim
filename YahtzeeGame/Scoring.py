@@ -51,13 +51,13 @@ class Scoring:
         # check for four of a kind
         # by checking that two dice numbers show up and that the end pairs don't match
         # to eliminate sets in the form AABBB or AAABB
-        elif len(dice_no_repeat) == 2 and dice_sorted[0] != dice_sorted[1] and dice_sorted[4] != dice_sorted[3]:
+        elif len(dice_no_repeat) == 2 and (dice_sorted[0] != dice_sorted[1] or dice_sorted[4] != dice_sorted[3]):
             # add up score of all dice and also save to three of a kind
             self.scores[7] = self.scores[6] = sum(dice_sorted)
 
         # check for three of a kind
         # first check that three dice numbers show up (if full house, already stored)
-        elif len(dice_no_repeat) == 3:
+        elif len(dice_no_repeat) == 3 or len(dice_no_repeat) == 2:
             # loop to check that in sorted list there are three numbers equal somewhere
             # not the form AABBC or ABBCC or AABCC
             for num in range(0, 3):

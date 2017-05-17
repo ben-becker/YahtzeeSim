@@ -82,7 +82,47 @@ class ScoringTests(unittest.TestCase):
         self.assertEqual(score.scores[9:11], [30, 0])
 
     def test_score_multiple_same_kind(self):
-        pass
+        score = Scoring()
+
+        score.score_multiple_same_kind([1, 1, 1, 1, 1], [1])
+        score_list = score.scores[6:8] + [score.scores[12]]
+        self.assertEquals(score_list, [5, 5, 50])
+        score.reset()
+
+        score.score_multiple_same_kind([1, 1, 1, 1, 2], [1, 2])
+        score_list = score.scores[6:8] + [score.scores[12]]
+        self.assertEquals(score_list, [6, 6, 0])
+        score.reset()
+
+        score.score_multiple_same_kind([1, 2, 2, 2, 2], [1, 2])
+        score_list = score.scores[6:8] + [score.scores[12]]
+        self.assertEquals(score_list, [9, 9, 0])
+        score.reset()
+
+        score.score_multiple_same_kind([1, 1, 2, 2, 2], [1, 2])
+        score_list = score.scores[6:8] + [score.scores[12]]
+        self.assertEquals(score_list, [8, 0, 0])
+        score.reset()
+
+        score.score_multiple_same_kind([1, 1, 1, 2, 2], [1, 2])
+        score_list = score.scores[6:8] + [score.scores[12]]
+        self.assertEquals(score_list, [7, 0, 0])
+        score.reset()
+
+        score.score_multiple_same_kind([1, 1, 1, 2, 3], [1, 2, 3])
+        score_list = score.scores[6:8] + [score.scores[12]]
+        self.assertEquals(score_list, [8, 0, 0])
+        score.reset()
+
+        score.score_multiple_same_kind([1, 1, 2, 2, 3], [1, 2, 3])
+        score_list = score.scores[6:8] + [score.scores[12]]
+        self.assertEquals(score_list, [0, 0, 0])
+        score.reset()
+
+        score.score_multiple_same_kind([1, 2, 2, 3, 3], [1, 2, 3])
+        score_list = score.scores[6:8] + [score.scores[12]]
+        self.assertEquals(score_list, [0, 0, 0])
+        score.reset()
 
     def test_score_chance(self):
         pass
