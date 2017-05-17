@@ -10,12 +10,14 @@ class Scoring:
 
         # sorts dice into ascending order
         dice = sorted(dice_list)
-        # deletes duplicate dice
+        # deletes duplicate dice numbers
         set_dice = set(dice)
 
         # writes scoring for ones-sixes
         for number in range(1, 7):
-            for dice_index in range(0, 6):
+            # check each dice to see if it equals the number of the category compared to i.e.(ones, twos, etc.)
+            for dice_index in range(0, 5):
+                # if the dice is the right number it is added to the score for that category
                 if dice[dice_index] == number:
                     scores[number-1] += number
 
