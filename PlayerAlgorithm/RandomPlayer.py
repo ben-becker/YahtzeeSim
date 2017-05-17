@@ -5,9 +5,12 @@ from random import randint
 from PlayerAlgorithm import Player
 
 
-class RandomPlayer(Player):
+class RandomPlayer(Player.Player):
 
-    def get_decision(self, dice_list, scorecard, num_hands, num_rolls):
+    def __init__(self):
+        pass
+
+    def get_decision(self):
         """Method to return random decisions"""
         decision_list = []
         for i in range(0, 6):
